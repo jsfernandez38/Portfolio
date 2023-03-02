@@ -1,0 +1,74 @@
+SELECT
+  started_at,
+  ended_at,
+  ended_at - started_at AS ride_length
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE
+  member_casual = "casual“
+
+SELECT AVG(ride_length)
+FROM `bikes-378502.bikeshare.tripdata_202202_casual_ride_length`
+
+SELECT
+  started_at,
+  ended_at,
+  ended_at - started_at AS ride_length
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE
+  member_casual = "member“
+
+SELECT avg(ride_length)
+FROM `bikes-378502.bikeshare.tripdata_202202_member_ride_length`
+
+SELECT
+Count(ride_id) / 28
+FROM `bikes-378502.bikeshare.tripdata_202202`
+
+SELECT 
+  count(ride_id),
+FROM `bikes-378502.bikeshare.tripdata_202202`
+Where member_casual = "member"
+GROUP BY day_of_week
+
+SELECT 
+  count(ride_id),
+FROM `bikes-378502.bikeshare.tripdata_202202`
+Where member_casual = "casual"
+GROUP BY day_of_week
+
+SELECT
+COUNT (rideable_type)
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE member_casual = "Casual" AND
+      rideable_type = "docked_bike“
+      
+SELECT
+COUNT (rideable_type)
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE member_casual = "casual" AND
+      rideable_type = "classic_bike“
+      
+SELECT
+COUNT (rideable_type) AS num_of_bikes
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE member_casual = "casual" AND
+      rideable_type = "electric_bike"
+      
+      SELECT
+COUNT (rideable_type)
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE member_casual = "member" AND
+      rideable_type = "classic_bike“
+      
+SELECT
+COUNT (rideable_type)
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE member_casual = "member" AND
+      rideable_type = "docked_bike“
+      
+SELECT
+COUNT (rideable_type) AS num_of_bikes
+FROM `bikes-378502.bikeshare.tripdata_202202`
+WHERE member_casual = "member" AND
+      rideable_type = "electric_bike"
+
